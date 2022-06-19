@@ -1,0 +1,159 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* Start of the navbar*/
+.navbar {
+  opacity: 0.9;
+  height: 67px;
+}
+
+.navbar .nav-link {
+  font-size: 1.1rem;
+}
+/* End of the navbar*/
+
+.banner {
+  position: relative;
+  background-image: url("./images/science.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: min(100vh, 550px);
+}
+.banner > .dark-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 550px;
+}
+
+.title {
+  width: fit-content;
+}
+
+.form-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-section {
+  height: calc(100vh - 67px);
+  display: flex;
+}
+
+.chat__rooms {
+  flex-basis: 20%;
+  background: #2d3436;
+  height: 100%;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 667px) {
+  .chat__rooms {
+    flex-basis: 30%;
+    overflow-x: hidden;
+  }
+
+  .chat__rooms > div > a {
+    font-size: 0.8;
+  }
+}
+
+.chat__rooms > div {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chat__rooms > div > a {
+  display: flex;
+  width: 100%;
+  color: #fff;
+
+  padding: 0.5rem;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  align-items: center;
+  font-weight: bolder;
+  transition: 0.2s;
+}
+
+.chat__rooms > div > a:hover {
+  opacity: 0.9;
+}
+
+.chat__body {
+  overflow-x: hidden;
+  flex: 1;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url("./images/pattern.jpg");
+  background-size: 30%;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  height: 100%;
+  overflow-y: auto;
+  gap: 1rem;
+}
+
+.message {
+  position: relative;
+  padding: 0.8rem;
+  background-color: #eee;
+}
+
+.message_title {
+  position: relative;
+  z-index: 1;
+}
+
+.message.my-message {
+  align-self: end;
+}
+
+.message.my-message::before {
+  left: 100%;
+  transform: skew(-26deg, -15deg) translate(-96%, -16%);
+}
+
+.message::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #eee;
+  top: -2px;
+  left: -1px;
+  transform: skew(26deg, 15deg);
+  z-index: 0;
+}
